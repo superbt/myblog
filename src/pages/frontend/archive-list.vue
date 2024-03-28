@@ -1,25 +1,35 @@
 <template>
     <Header></Header>
 
-    <div class="container mx-auto max-w-screen-xl mt-5">
+    <div class="container mx-auto max-w-screen-xl mt-5 ">
+      <!--这边是什么意思呢-->
         <div class="grid grid-cols-4">
             <!-- 左边栏 -->
             <div class="col-span-4 px-3 md:col-span-3 sm:col-span-4">
+               <!--应该绑定数据 循环赋值-->
                 <div v-for="(item, index) in archives" :key="index"
                     class="p-5 mb-4 border border-gray-200 rounded-lg bg-white dark:bg-gray-800 dark:border-gray-700">
+                    <!--这个是啥呀-->
                     <time class="text-lg font-semibold text-gray-900 dark:text-white">{{ item.month }}</time>
+                    <!--这又是什么呢-->
                     <ol class="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
+                       <!--获取文章的详情-->
                         <li v-for="(item2, index2) in item.articles" :key="index2">
+                            <!--进入详情的方法-->
                             <a @click="goArticleDetail(item2.id)"
                                 class="cursor-pointer items-center block p-3 sm:flex hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <!--缩率图 -->
                                 <img class="w-24 h-12 mb-3 mr-3 rounded-lg sm:mb-0" :src="item2.titleImage"
                                     alt="Jese Leos image" />
+                                 <!--我计划在这里加一个流媒体的展示-->
                                 <div class="text-gray-600 dark:text-gray-400">
-                                    <div class="text-base font-normal"><span
-                                            class="font-medium text-gray-900 dark:text-white">{{ item2.title }}</span></div>
+                                  <!--标题哟-->
+                                    <div class="text-base font-normal">
+                                      <span class="font-medium text-gray-900 dark:text-white">{{ item2.title }}</span>
+                                    </div>
                                     <!-- <div class="text-sm font-normal">"I wanted to share a webinar zeroheight."</div> -->
-                                    <span
-                                        class="inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400">
+                                  <!--这里应该是时间-->
+                                    <span class="inline-flex items-center text-xs font-normal text-gray-500 dark:text-gray-400">
                                         <svg class="w-2.5 h-2.5 mr-2 mb-1px" aria-hidden="true"
                                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -36,19 +46,29 @@
 
                 <!-- 分页 -->
                 <nav aria-label="Page navigation example" v-if="total > 0">
+
                     <ul class="flex items-center justify-center mt-10 mb-10 -space-x-px h-10 text-base">
+                      <!--上一页-->
                         <li>
                             <a v-if="current > 1" @click="getArchiveList(current - 1)"
-                                class="flex items-center justify-center px-4 h-10 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                class="flex items-center justify-center px-4 h-10 ml-0 leading-tight text-gray-500
+                                bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700
+                                dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+
                                 <span class="sr-only">Previous</span>
+
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 6 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                         stroke-width="2" d="M5 1 1 5l4 4" />
                                 </svg>
                             </a>
+
                             <a v-else @click="getArchiveList(current)"
-                                class="cursor-not-allowed flex items-center justify-center px-4 h-10 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                class="cursor-not-allowed flex items-center justify-center px-4 h-10 ml-0
+                                leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100
+                                hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700
+                                dark:hover:text-white">
                                 <span class="sr-only">Previous</span>
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 6 10">
@@ -57,18 +77,25 @@
                                 </svg>
                             </a>
                         </li>
+                      <!--对页数做一个处理-->
                         <li v-for="page in pages" :key="page">
                             <a @click="getArchiveList(page)"
-                                class="flex items-center border-gray-300 justify-center px-4 h-10 leading-tight bg-white border dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                                :class="[page == current ? 'text-blue-600 bg-blue-50 hover:bg-blue-100 hover:text-blue-700' : 'text-gray-500  hover:bg-gray-100 hover:text-gray-700']"
+                                class="flex items-center border-gray-300 justify-center px-4 h-10
+                                leading-tight bg-white border dark:bg-gray-800 dark:border-gray-700
+                                dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                :class="[page == current ? 'text-blue-600 bg-blue-50 hover:bg-blue-100 hover:text-blue-700'
+                                 : 'text-gray-500  hover:bg-gray-100 hover:text-gray-700']"
                                 >
-                                
                                 {{ page }}
                             </a>
                         </li>
+                      <!--如果当前页小于设置页数-->
                         <li>
                             <a v-if="current < pages" @click="getArchiveList(current + 1)"
-                                class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500
+                                 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100
+                                 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700
+                                 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                                 <span class="sr-only">Next</span>
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 6 10">
@@ -77,7 +104,10 @@
                                 </svg>
                             </a>
                             <a v-else="current == pages" @click="getArchiveList(current)"
-                                class="cursor-not-allowed flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                class="cursor-not-allowed flex items-center justify-center px-4
+                                h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg
+                                hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
+                                dark:hover:bg-gray-700 dark:hover:text-white">
                                 <span class="sr-only">Next</span>
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 6 10">
@@ -90,6 +120,7 @@
                 </nav>
 
             </div>
+
             <!-- 右边栏 -->
             <div class="col-span-4 px-3 md:col-span-1 sm:col-span-4">
                 <UserInfoCard></UserInfoCard>
@@ -115,6 +146,7 @@ const goArticleDetail = (articleId) => {
     router.push({ path: '/article/detail', query: { articleId: articleId } })
 }
 
+//文章内容
 const archives = ref([])
 // 当前页码
 const current = ref(1)
