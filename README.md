@@ -1,2 +1,0 @@
-# myblog
-this my blog
