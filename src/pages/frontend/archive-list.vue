@@ -9,7 +9,7 @@
                <!--应该绑定数据 循环赋值-->
                 <div v-for="(item, index) in archives" :key="index"
                     class="p-5 mb-4 border border-gray-200 rounded-lg bg-white dark:bg-gray-800 dark:border-gray-700">
-                    <!--这个是啥呀-->
+                    <!--这个是啥呀 明白了 这块 是靠年月份分割-->
                     <time class="text-lg font-semibold text-gray-900 dark:text-white">{{ item.month }}</time>
                     <!--这又是什么呢-->
                     <ol class="mt-3 divide-y divider-gray-200 dark:divide-gray-700">

@@ -6,10 +6,12 @@
             <!-- 左边栏 -->
             <div class="col-span-4 px-3 md:col-span-3 sm:col-span-4">
 
-                <div class="mb-3 w-full font-medium p-5 bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
+                <div class="mb-3 w-full font-medium p-5 bg-white border border-gray-200 rounded-lg
+                             dark:bg-gray-800 dark:border-gray-700">
                         <h2 class="mb-2 font-bold text-gray-900 uppercase dark:text-white">标签</h2>
                         <div @click="goTagArticleListPage(item.id, item.name)" v-for="(item, index) in tags" :key="index"
-                            class="inline-block rounded-full bg-green-100 text-green-800 text-sm font-medium mr-2 mb-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300 hover:bg-green-200 hover:text-green-900">
+                            class="inline-block rounded-full bg-green-100 text-green-800 text-sm font-medium mr-2
+                            mb-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300 hover:bg-green-200 hover:text-green-900">
                             {{ item.name }}
                         </div>
                     </div>
@@ -19,7 +21,7 @@
                 <UserInfoCard></UserInfoCard>
             </div>
         </div>
-        </div>
+    </div>
 
     <Footer></Footer>
 </template>

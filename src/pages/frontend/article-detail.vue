@@ -8,11 +8,14 @@
             <div class="col-span-4 px-3 mb-3 md:col-span-3 sm:col-span-4">
                 <div class="bg-white border border-gray-200 p-5 rounded-lg dark:bg-gray-800 dark:border-gray-700">
                     <!-- 面包屑 -->
+                  <!--这是啥意思呀-->
                     <nav class="flex mb-4" aria-label="Breadcrumb">
+
                         <ol class="inline-flex items-center space-x-1 md:space-x-3">
                             <li class="inline-flex items-center">
                                 <a @click="router.push('/')"
-                                    class="cursor-pointer inline-flex items-center text-sm font-medium text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                                    class="cursor-pointer inline-flex items-center text-sm font-medium text-gray-500
+                                    hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
                                     <svg class="w-3 h-3 mr-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         fill="currentColor" viewBox="0 0 20 20">
                                         <path
@@ -62,16 +65,18 @@
 
                         <div class="article-content" v-viewer v-html="article.content" v-highlight>
                         </div>
-                        
+
                         <!-- 标签 -->
                         <div class="mt-5 mb-5">
                             <div @click="goTagArticleListPage(item.id, item.name)" v-for="(item, index) in article.tags"
                                 :key="index"
-                                class="inline-block rounded-full bg-green-100 text-green-800 text-sm font-medium mr-3 mb-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300 hover:bg-green-200 hover:text-green-900">
+                                class="inline-block rounded-full bg-green-100 text-green-800 text-sm font-medium mr-3
+                                mb-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300 hover:bg-green-200 hover:text-green-900">
                                 # {{ item.name }}
                             </div>
                         </div>
                     </article>
+
                     <!-- 上下篇 -->
                     <div class="article-footer flex">
                         <div class="cursor-pointer">
@@ -106,6 +111,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- 右边栏 -->
             <div class="col-span-4 px-3 md:col-span-1 sm:col-span-4">
                 <div class="sticky top-21">
@@ -119,12 +125,14 @@
                             class="text-sm font-medium text-gray-900 bg-white rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                             <a @click="goCatagoryArticleListPage(item.id, item.name)" v-for="(item, index) in categories"
                                 :key="index"
-                                class="flex items-end block w-full px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
+                                class="flex items-end block w-full px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-100
+                                hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
                                 <svg class="w-4 h-4 mr-2 mb-2px text-gray-800 inline dark:text-white" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 18">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                         stroke-width="0.9"
-                                        d="M2.539 17h12.476l4-9H5m-2.461 9a1 1 0 0 1-.914-1.406L5 8m-2.461 9H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.443a1 1 0 0 1 .8.4l2.7 3.6H16a1 1 0 0 1 1 1v2H5" />
+                                        d="M2.539 17h12.476l4-9H5m-2.461 9a1 1 0 0 1-.914-1.406L5 8m-2.461 9H2a1 1
+                                        0 0 1-1-1V2a1 1 0 0 1 1-1h5.443a1 1 0 0 1 .8.4l2.7 3.6H16a1 1 0 0 1 1 1v2H5" />
                                 </svg>
                                 {{ item.name }}
                             </a>
@@ -136,7 +144,9 @@
                         class="mb-3 w-full font-medium p-5 bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
                         <h2 class="mb-2 font-bold text-gray-900 uppercase dark:text-white">标签</h2>
                         <div @click="goTagArticleListPage(item.id, item.name)" v-for="(item, index) in tags" :key="index"
-                            class="inline-block bg-green-100 text-green-800 text-xs font-medium mr-2 mb-1 px-2.5 py-0.5 rounded hover:bg-green-200 hover:text-green-900 dark:hover:bg-green-800 dark:hover:text-green-300 dark:bg-green-900 dark:text-green-300">
+                            class="inline-block bg-green-100 text-green-800 text-xs font-medium mr-2 mb-1
+                            px-2.5 py-0.5 rounded hover:bg-green-200 hover:text-green-900 dark:hover:bg-green-800
+                            dark:hover:text-green-300 dark:bg-green-900 dark:text-green-300">
                             {{ item.name }}
                         </div>
                     </div>

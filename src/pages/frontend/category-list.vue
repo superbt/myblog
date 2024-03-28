@@ -5,13 +5,16 @@
         <div class="grid grid-cols-4">
             <!-- 左边栏 -->
             <div class="col-span-4 px-3 md:col-span-3 sm:col-span-4">
-                <div class="mb-3 w-full font-medium p-5 bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
+                <div class="mb-3 w-full font-medium p-5 bg-white border border-gray-200
+                            rounded-lg dark:bg-gray-800 dark:border-gray-700">
+
                     <h2 class="mb-2 font-bold text-gray-900 uppercase dark:text-white">分类</h2>
 
-                    <div
-                            class="text-base font-medium text-gray-900 bg-white rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    <div class="text-base font-medium text-gray-900 bg-white rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
                             <a @click="goCatagoryArticleListPage(item.id, item.name)" v-for="(item, index) in categories" :key="index"
-                                class="flex items-end block w-full px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
+                                class="flex items-end block w-full px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-100
+                                hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700
+                                dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
                                 <svg class="w-4 h-4 mr-2 mb-2px text-gray-800 inline dark:text-white" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 18">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -29,7 +32,6 @@
             </div>
         </div>
     </div>
-
     <Footer></Footer>
 </template>
 

@@ -8,9 +8,12 @@
             <div class="col-span-4 px-3 md:col-span-3 sm:col-span-4">
                 <!-- 标签名称 -->
                 <div class="flex items-center mb-5 text-gray-600 font-bold text-2xl">
-                    <svg class="w-6 h-6 mr-2 text-gray-600 inline dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 18">
-    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.583 5.445h.01M8.86 16.71l-6.573-6.63a.993.993 0 0 1 0-1.4l7.329-7.394A.98.98 0 0 1 10.31 1l5.734.007A1.968 1.968 0 0 1 18 2.983v5.5a.994.994 0 0 1-.316.727l-7.439 7.5a.975.975 0 0 1-1.385.001Z"/>
-  </svg>
+                    <svg class="w-6 h-6 mr-2 text-gray-600 inline dark:text-white" aria-hidden="true"
+                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 18">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" s
+                          troke-width="2"
+                          d="M13.583 5.445h.01M8.86 16.71l-6.573-6.63a.993.993 0 0 1 0-1.4l7.329-7.394A.98.98 0 0 1 10.31 1l5.734.007A1.968 1.968 0 0 1 18 2.983v5.5a.994.994 0 0 1-.316.727l-7.439 7.5a.975.975 0 0 1-1.385.001Z"/>
+                  </svg>
                     {{ tagName }}
                 </div>
 
@@ -24,14 +27,15 @@
                         </a>
                         <div class="p-5">
                             <a @click="goArticleDetail(article.id)" class="cursor-pointer">
-                                <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{
-                                    article.title }}</h2>
+                                <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{article.title }}</h2>
                             </a>
                             <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">{{ article.description }}</p>
                             <p>
                             <div @click="goTagArticleListPage(item.id, item.name)" v-for="(item, index) in article.tags"
                                 :key="index"
-                                class="inline-block bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded hover:bg-green-200 hover:text-green-900 dark:hover:bg-green-800 dark:hover:text-green-300 dark:bg-green-900 dark:text-green-300">
+                                class="inline-block bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5
+                                rounded hover:bg-green-200 hover:text-green-900 dark:hover:bg-green-800 dark:hover:text-green-300
+                                dark:bg-green-900 dark:text-green-300">
                                 {{ item.name }}
                             </div>
                             </p>
@@ -58,7 +62,10 @@
                     <ul class="flex items-center justify-center mt-10 mb-10 -space-x-px h-10 text-base">
                         <li>
                             <a v-if="current > 1" @click="getArticles(current - 1)"
-                                class="flex items-center justify-center px-4 h-10 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                class="flex items-center justify-center px-4 h-10 ml-0 leading-tight
+                                text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100
+                                hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400
+                                dark:hover:bg-gray-700 dark:hover:text-white">
                                 <span class="sr-only">Previous</span>
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 6 10">
@@ -67,7 +74,10 @@
                                 </svg>
                             </a>
                             <a v-else @click="getArticles(current)"
-                                class="cursor-not-allowed flex items-center justify-center px-4 h-10 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                class="cursor-not-allowed flex items-center justify-center px-4 h-10 ml-0 leading-tight
+                                text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100
+                                hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700
+                                dark:hover:text-white">
                                 <span class="sr-only">Previous</span>
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 6 10">
@@ -78,16 +88,20 @@
                         </li>
                         <li v-for="page in pages" :key="page">
                             <a @click="getArticles(page)"
-                                class="flex items-center border-gray-300 justify-center px-4 h-10 leading-tight bg-white border dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-                                :class="[page == current ? 'text-blue-600 bg-blue-50 hover:bg-blue-100 hover:text-blue-700' : 'text-gray-500  hover:bg-gray-100 hover:text-gray-700']"
+                                class="flex items-center border-gray-300 justify-center px-4 h-10 leading-tight bg-white
+                                border dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                                :class="[page == current ? 'text-blue-600 bg-blue-50 hover:bg-blue-100 hover:text-blue-700' : 'text-gray-500  ' +
+                                 'hover:bg-gray-100 hover:text-gray-700']"
                                 >
-                                
+
                                 {{ page }}
                             </a>
                         </li>
                         <li>
                             <a v-if="current < pages" @click="getArticles(current + 1)"
-                                class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white
+                                border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800
+                                dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                                 <span class="sr-only">Next</span>
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 6 10">
@@ -96,7 +110,10 @@
                                 </svg>
                             </a>
                             <a v-else="current == pages" @click="getArticles(current)"
-                                class="cursor-not-allowed flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                class="cursor-not-allowed flex items-center justify-center px-4 h-10 leading-tight
+                                text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100
+                                hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700
+                                dark:hover:text-white">
                                 <span class="sr-only">Next</span>
                                 <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                                     viewBox="0 0 6 10">
@@ -113,29 +130,27 @@
             <div class="col-span-4 px-3 md:col-span-1 sm:col-span-4">
                 <div class="sticky top-21">
                     <UserInfoCard></UserInfoCard>
-
-<!-- 文章分类 -->
-<div
-    class="mb-3 w-full font-medium p-5 bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-    <h4 class="mb-2 font-bold text-gray-900 uppercase dark:text-white">分类</h4>
-    <div
-        class="text-sm font-medium text-gray-900 bg-white rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
-        <a @click="goCatagoryArticleListPage(item.id, item.name)" v-for="(item, index) in categories"
-            :key="index"
-            class="flex items-end block w-full px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
-            <svg class="w-4 h-4 mr-2 mb-2px text-gray-800 inline dark:text-white" aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 18">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                    stroke-width="0.9"
-                    d="M2.539 17h12.476l4-9H5m-2.461 9a1 1 0 0 1-.914-1.406L5 8m-2.461 9H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.443a1 1 0 0 1 .8.4l2.7 3.6H16a1 1 0 0 1 1 1v2H5" />
-            </svg>
-            {{ item.name }}
-        </a>
-    </div>
-</div>
+                  <!-- 文章分类 -->
+                    <div
+                        class="mb-3 w-full font-medium p-5 bg-white border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
+                        <h4 class="mb-2 font-bold text-gray-900 uppercase dark:text-white">分类</h4>
+                        <div
+                            class="text-sm font-medium text-gray-900 bg-white rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                            <a @click="goCatagoryArticleListPage(item.id, item.name)" v-for="(item, index) in categories"
+                                :key="index"
+                                class="flex items-end block w-full px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white">
+                                <svg class="w-4 h-4 mr-2 mb-2px text-gray-800 inline dark:text-white" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 18">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="0.9"
+                                        d="M2.539 17h12.476l4-9H5m-2.461 9a1 1 0 0 1-.914-1.406L5 8m-2.461 9H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.443a1 1 0 0 1 .8.4l2.7 3.6H16a1 1 0 0 1 1 1v2H5" />
+                                </svg>
+                                {{ item.name }}
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 
