@@ -1,6 +1,6 @@
 <template>
     <footer class="footer">
-        Copyright © 2023. All rights reserved. Provided by&nbsp;<a class="quanxiaoha" href="https://www.quanxiaoha.com" target="_blank">洼</a>
+        Copyright © 2024 All rights reserved. Provided by&nbsp;<a class="xbt" href="/" target="_blank">洼</a>
     </footer>
 </template>
 
@@ -13,7 +13,7 @@
     margin-top: 5rem;
 }
 
-.quanxiaoha {
+.xbt {
     text-decoration: underline;
     color: rgb(52, 152, 219);
 }
