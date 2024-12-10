@@ -1,4 +1,5 @@
 <template>
+  <!--头部信息-->
     <Header></Header>
 
     <div class="container mx-auto max-w-screen-xl mt-5 ">

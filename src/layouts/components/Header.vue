@@ -3,6 +3,7 @@
         <!--表头图标-->
         <nav class="bg-blue-100 border-gray-200 border-b dark:bg-gray-900">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+
               <!--图标模块 start-->
                 <a href="/" class="flex items-center">
                   <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
@@ -156,6 +157,26 @@
                                 归档
                             </a>
                         </li>
+
+                      <li>
+                        <a @click="$router.push('/myprod')"
+                           :class="[currPath == '/myprod' ? 'text-blue-700' : 'text-gray-900']"
+                           class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent
+                                md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500
+                                dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                          作品
+                        </a>
+                      </li>
+
+                      <li>
+                        <a @click="$router.push('/aboutme')"
+                           :class="[currPath == '/aboutme' ? 'text-blue-700' : 'text-gray-900']"
+                           class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent
+                                md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500
+                                dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                          作者
+                        </a>
+                      </li>
                     </ul>
                 </div>
               <!--主模块div模块 end-->

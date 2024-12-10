@@ -15,6 +15,8 @@ import TagList from '@/pages/frontend/tag-list.vue'
 import CategoryArticleList from '@/pages/frontend/category-article-list.vue'
 import TagArticleList from '@/pages/frontend/tag-article-list.vue'
 import ArchiveList from '@/pages/frontend/archive-list.vue'
+import MyProd from '@/pages/frontend/myprod.vue'
+import AboutMe from  '@/pages/frontend/aoutme.vue'
 
 const routes = [
     {
@@ -120,7 +122,22 @@ const routes = [
         meta: {
             title: '归档'
         },
+    },
+    {
+        path: '/myprod',
+        component: MyProd,
+        meta: {
+            title: '作品'
+        },
+    },
+    {
+        path: '/aboutme',
+        component: AboutMe,
+        meta: {
+            title: '关于作者'
+        },
     }
+
 ]
 
 const router = createRouter({
