@@ -5,7 +5,7 @@
             <div class="col-span-6 md:col-span-3 sm:col-span-6">
                 <div class="login-container-left flex justify-center items-center flex-col">
                     <div class="animate__animated animate__bounceInLeft items-center flex flex-col">
-                        <h2 class="font-bold text-4xl mb-7 text-white">Weblog 博客登录</h2>
+                        <h2 class="font-bold text-4xl mb-7 text-white">XBTblog 博客登录</h2>
                         <p class="text-white">一款由 Spring Boot + Mybaits Plus + Vue 3.2 + Vite 4 开发的前后端分离博客。</p>
                         <img src="@/assets/developer.png" class="login-image">
                     </div>
@@ -47,7 +47,7 @@
 
     </div>
 </template>
-  
+
 <script setup>
 import { reactive, ref, onMounted, onBeforeUnmount } from 'vue'
 import { login } from '@/api/admin/user';
@@ -167,4 +167,3 @@ onBeforeUnmount(() => {
 
 .login-btn {}
 </style>
-  
